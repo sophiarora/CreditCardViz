@@ -4,6 +4,8 @@ Visualization tool for credict card exploratory. Data is from Kaggle site
 
 While bokeh is a powerful tool, it's not its expertise to paint large dataset. For the purpose of exploration, I keep all the fraud transactions and samples 10% of normal transactions. Sampling helped in quick visualization.
 
+This app require installing python3 or above to view the app.
+
 ## Play the app
 To play with the app clone this repo and run
 ```
