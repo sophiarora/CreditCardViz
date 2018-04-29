@@ -11,9 +11,11 @@ bokeh serve --show creditcardvizapp.py
 ```
 
 ## Visual elements
-Transaction type: describe whether the transaction is fraud or normal. Orange points are fraud transactions
-Circle Size: in proportion to the amount of the transactions
-Selections buttons: could select which elements to show. X and Y selections are for variables and transaction type select choose which subset of data to show
+Transaction type: describe whether the transaction is fraud or normal. Orange points are fraud transactions.
+
+Circle Size: in proportion to the amount of the transactions.
+
+Selections buttons: could select which elements to show. X and Y selections are for variables and transaction type select choose which subset of data to show.
 
 
 ## Requirements
