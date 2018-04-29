@@ -7,7 +7,7 @@ While bokeh is a powerful tool, it's not its expertise to paint large dataset. F
 This app require installing python3 or above to view the app.
 
 ## Play the app
-To play with the app clone this repo and run
+To play with the app clone this repo and run the following command line within the folder.
 ```
 bokeh serve --show creditcardvizapp.py
 ```
@@ -25,7 +25,7 @@ Selections buttons: could select which elements to show. X and Y selections are 
 
 ## Requirements
 
-This repository require pandas, sklearn and bokeh to be install in order to view. Could us pip to download the required packages
+This repository require pandas, sklearn and bokeh to be install in order to view. Could use pip to download the required packages. Run the following command line to install
 ```
 pip install pandas sklearn bokeh
 ```
