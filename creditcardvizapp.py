@@ -5,7 +5,7 @@ import pandas as pd
 credit_card = pd.read_csv('creditcard_viz.csv', encoding = 'utf-8')
 from bokeh.io import push_notebook, show, output_notebook
 from bokeh.layouts import row, widgetbox
-from bokeh.models import Select, CategoricalColorMapper
+from bokeh.models import Select, ColumnDataSource
 from bokeh.application.handlers import FunctionHandler
 from bokeh.palettes import Spectral5
 from bokeh.plotting import curdoc, figure
@@ -39,10 +39,6 @@ def create_figure():
             return df[df['type'] == 'Fraud']
 
     df_plot = update_frame()
-    xs = df_plot[x.value].values
-    ys = df_plot[y.value].values
-    plot_color = df_plot['color'].values
-    plot_size = df_plot['size'].values
     x_title = x.value.title()
     y_title = y.value.title()
     tran_title = transaction.value.title()
@@ -59,8 +55,11 @@ def create_figure():
 
     #color_mapper = CategoricalColorMapper(factors=["normal", "fraud"], palette=["pink", "yellow"])
 
-    p.circle(x=xs, y=ys, color = plot_color, line_color="white", \
-                alpha=0.6, hover_color='white', hover_alpha=0.5, size = plot_size)
+    datasource = ColumnDataSource(df_plot[[x.value, y.value, 'color', 'type', 'size']])
+
+    p.circle(x.value, y.value, color = 'color', line_color="white", \
+            alpha=0.6, hover_color='white', hover_alpha=0.5, size = 'size', \
+            legend = 'type', source = datasource)
 
     return p
 
