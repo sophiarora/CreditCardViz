@@ -27,5 +27,6 @@ Selections buttons: could select which elements to show. X and Y selections are 
 
 This repository require pandas, sklearn and bokeh to be install in order to view. Could use pip to download the required packages. Run the following command line to install
 ```
-pip install pandas sklearn bokeh
+pip install -U numpy scipy scikit-learn
+pip install bokeh
 ```
