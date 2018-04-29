@@ -17,6 +17,9 @@ Circle Size: in proportion to the amount of the transactions.
 
 Selections buttons: could select which elements to show. X and Y selections are for variables and transaction type select choose which subset of data to show.
 
+![alt text](https://github.com/sophiarora/CreditCardViz/blob/master/vizboard_demo.png)
+
+
 
 ## Requirements
 
