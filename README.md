@@ -4,7 +4,7 @@ Visualization tool for credit card exploratory. This dataset is obtained from Ka
 
 All the variables for this dataset are transformed using PCA dimension reduction algorithm. PCA ensures that we will not abuse user information. However, it also made analysis more difficult. To help visualize and explore data I built this simple app.
 
-While bokeh is a powerful tool, it could be slow to paint large dataset locally. For the purpose of exploration, I keep all the fraud transactions and samples 10% of normal transactions. Sampling helped in quick visualization.
+Bokeh is a powerful tool, it could be slow to paint large dataset locally. For the purpose of exploration, I keep all the fraud transactions and sampled 10% of normal transactions. Sampling helped in quick visualization.
 
 This app requires installing python3 or above to view the app.
 
