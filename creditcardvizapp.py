@@ -6,17 +6,22 @@ credit_card = pd.read_csv('creditcard_viz.csv', encoding = 'utf-8')
 from bokeh.io import push_notebook, show, output_notebook
 from bokeh.layouts import row, widgetbox
 from bokeh.models import Select, ColumnDataSource
-from bokeh.application.handlers import FunctionHandler
-from bokeh.palettes import Spectral5
 from bokeh.plotting import curdoc, figure
-from bokeh.application import Application
 from sklearn.preprocessing import MinMaxScaler
-#from bokeh.palettes import RdYlGn
+#color palette import uncomment if want to use palettes:
+#from bokeh.palettes import Spectral5
+##following two lines are for notebook handler uncomment if want
+#to use handbook handler to view in a jupyter notebook:
+#from bokeh.application.handlers import FunctionHandler
+#from bokeh.application import Application
 
+#line for notebook handler:
 #output_notebook()
 df = credit_card.copy()
 scale = MinMaxScaler()
-#COLORS = Spectral5
+
+
+
 #define color
 df['color'] = np.where(df['Class'] == 0, 'grey', 'orange')
 df['size'] = scale.fit_transform(df['Amount'].values.reshape(-1, 1)).ravel()*100
@@ -29,8 +34,10 @@ columns = sorted(df.columns[0:28])
 
 
 def create_figure():
-    """function for interactive actions"""
+    """function create figure"""
     def update_frame():
+        """function to update frame to plot for fraud/normal/both types
+        """
         if transaction.value == 'both':
             return df
         elif transaction.value =='Normal':
@@ -50,10 +57,9 @@ def create_figure():
                   x_range = (min(df[x.value].values), max(df[x.value].values)),\
                   y_range = (min(df[y.value].values), max(df[y.value].values)))
     #added x range and y range so the plot range will not change when transaction type changes
+
     p.xaxis.axis_label = x_title
     p.yaxis.axis_label = y_title
-
-    #color_mapper = CategoricalColorMapper(factors=["normal", "fraud"], palette=["pink", "yellow"])
 
     datasource = ColumnDataSource(df_plot[[x.value, y.value, 'color', 'type', 'size']])
 
@@ -69,7 +75,7 @@ def update(attr, old, new):
     #push updates to notebook
     push_notebook()
 
-    #define xs
+#define each interaction
 x = Select(title='X-Axis', value='V1', options=columns)
 x.on_change('value', update)
 
