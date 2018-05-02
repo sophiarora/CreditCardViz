@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-credit_card = pd.read_csv('https://github.com/sophiarora/CreditCardViz/blob/master/creditcard_viz.csv', encoding = 'utf-8')
+credit_card = pd.read_csv('https://github.com/sophiarora/CreditCardViz/raw/master/creditcard_viz.csv', encoding = 'utf-8')
 from bokeh.io import push_notebook, show, output_notebook
 from bokeh.layouts import row, widgetbox
 from bokeh.models import Select, ColumnDataSource
