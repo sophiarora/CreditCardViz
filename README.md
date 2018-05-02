@@ -10,8 +10,12 @@ This app requires installing python3 or above to view the app.
 
 ## Play the app
 To play with the app clone this repo and run the following command line within the folder.
-Using methods mention in this [wonderful blog](http://ericstrong.org/running-a-bokeh-server-on-heroku-part-2/).
+
+OR Using methods mention in this [wonderful blog](http://ericstrong.org/running-a-bokeh-server-on-heroku-part-2/),to deploy the app online.
+
 Click to [HERE HERE HERE](https://creditcardviz.herokuapp.com/creditcardvizapp) to view :)
+
+
 ```
 bokeh serve --show creditcardvizapp.py
 ```
